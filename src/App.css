@@ -17,6 +17,7 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     justify-content: center;
+    align-items: start;
     
 }
 
@@ -112,4 +113,46 @@ h1 {
     h2 {
         font-size: 1.25rem;
     }
+}
+
+/* Main */
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    background-color: gray;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 16px;
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card:focus {
+    outline: none;
+}
+
+.card:hover,
+.card:focus-visible {
+    transform: translateY(-10%);
+}
+
+.card:active {
+    transform: translateY(0%) scale(0.8);
+}
+
+.img {
+    height: 240px;
+    width: 240px;
+    background-color: white;
 }
