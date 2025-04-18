@@ -1,34 +1,41 @@
 import './App.css'
+import { useState } from 'react'
 
 function App() {
+  const [score, setScore] = useState(0);
+
+  const onCardClick = () => {
+    setScore(score + 1);
+  }
+
   return (
     <>
-      <Header />
+      <Header score={score} />
       <main>
-        <Card />
-        <Card />
-        <Card />
+        <Card onClick={onCardClick} />
+        <Card onClick={onCardClick} />
+        <Card onClick={onCardClick} />
       </main>
     </>
   )
 }
 
-function Header() {
+function Header({ score }) {
   return (
     <header>
       <h1>Memory Game: Cat Edition</h1>
         <div className='instructions'>One click per kitty, repeat and you’re beat! 🐱</div>
         <div className='score-wrapper'>
-          <h2>Score:</h2>
+          <h2>Score: {score.toString()}</h2>
           <h2>Best Score:</h2>
         </div>
     </header>
   )
 }
 
-function Card() {
+function Card({ onClick }) {
   return (
-    <button className='card'>
+    <button className='card' onClick={onClick}>
       <div className='img'></div>
       <h3>Cat Name</h3>
     </button>
