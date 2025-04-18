@@ -1,0 +1,115 @@
+/*
+Josh's Custom CSS Reset
+https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    max-width: 1920px;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    justify-content: center;
+    
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: inline-block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+button {
+    line-height: 1;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+    filter: brightness(110%);
+}
+
+button:focus {
+    filter: brightness(110%);
+}
+
+button:active {
+    filter: brightness(90%);
+}
+
+/* Header */
+header {
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.instructions {
+    text-align: center;
+}
+
+.score-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+@media (max-width: 425px) {
+    header {
+        padding: 32px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+}
