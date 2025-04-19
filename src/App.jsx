@@ -2,29 +2,36 @@ import './App.css'
 import { useState } from 'react'
 
 function App() {
+  const [catIDs, setCatIDs] = useState([
+      "pers",
+      "siam",
+      "beng",
+      "sphy",
+      "mcoo",
+      "rblu",
+      "ragd",
+      "sfol",
+      "buri",
+      "abys",
+      "bsho",
+      "orie",
+    ]);
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
 
   const onCardClick = () => {
     setScore(score + 1);
     if (score + 1 > bestScore) setBestScore(bestScore + 1);
-  }
-
-  // Just a temporary function to check if best score works as intended
-  const onCardClick2 = () => {
-    setScore(0);
-  }
+  };
 
   return (
     <>
       <Header score={score} bestScore={bestScore} />
       <main>
-        <Card onClick={onCardClick} />
-        <Card onClick={onCardClick2} />
-        <Card onClick={onCardClick} />
+        {catIDs.map(entry => <Card key={entry} id={entry} onClick={onCardClick} />)}
       </main>
     </>
-  )
+  );
 }
 
 function Header({ score, bestScore }) {
@@ -40,11 +47,11 @@ function Header({ score, bestScore }) {
   )
 }
 
-function Card({ onClick }) {
+function Card({ id, onClick }) {
   return (
     <button className='card' onClick={onClick}>
       <div className='img'></div>
-      <h3>Cat Name</h3>
+      <h3>{id}</h3>
     </button>
   )
 }
