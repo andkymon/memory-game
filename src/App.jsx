@@ -1,5 +1,6 @@
 import './App.css'
 import { useState } from 'react'
+import shuffle from './utils/shuffle';
 
 function App() {
   const [catIDs, setCatIDs] = useState([
@@ -19,9 +20,11 @@ function App() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
 
-  const onCardClick = () => {
+  const onCardClick = (e) => {
     setScore(score + 1);
     if (score + 1 > bestScore) setBestScore(bestScore + 1);
+    setCatIDs(shuffle(catIDs));
+    e.currentTarget.blur(); // removing button focus on click
   };
 
   return (
