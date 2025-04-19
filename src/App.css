@@ -154,5 +154,27 @@ main {
 .img {
     height: 240px;
     width: 240px;
-    background-color: white;
+    background-color: gray;
+    object-fit: contain;
+}
+
+.loader {
+    border: 12px solid #f3f3f3;
+    /* Light grey */
+    border-top: 12px solid gray;
+    /* Blue */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 0.75s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

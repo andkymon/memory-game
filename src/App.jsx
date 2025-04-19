@@ -40,7 +40,7 @@ function App() {
     <>
       <Header score={score} bestScore={bestScore} />
       <main>
-          {catData.length > 1 && catData.map(data => <Card key={data.id} name={data.name} img={data.img} onClick={onCardClick} />)}
+          {catData.length > 1 ? catData.map(data => <Card key={data.id} name={data.name} img={data.img} onClick={onCardClick} />) : <div className='loader'></div>}
       </main>
     </>
   );
