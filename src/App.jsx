@@ -6,6 +6,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [catData, setCatData] = useState([]);
+  const [clicked, setClicked] = useState(new Set());
 
   useEffect(() => {
     let isActive = true;
@@ -49,9 +50,15 @@ function App() {
     };
   }, []);
 
-  const onCardClick = (e) => {
-    setScore(score + 1);
-    if (score + 1 > bestScore) setBestScore(bestScore + 1);
+  const onCardClick = (name, e) => {
+    if (clicked.has(name)) {
+      setScore(0);
+      setClicked(new Set());
+    } else {
+      setClicked(new Set(clicked.add(name)));
+      setScore(score + 1);
+      if (score + 1 > bestScore) setBestScore(bestScore + 1);
+    }
     shuffle(catData);
     e.currentTarget.blur(); // removing button focus on click
   };
@@ -95,7 +102,7 @@ function Header({ score, bestScore }) {
 
 function Card({ name, img, onClick }) {
   return (
-    <button className="card" onClick={onClick}>
+    <button className="card" onClick={() => onClick(name)}>
       <img className="img" src={img} />
       <h3>{name}</h3>
     </button>
