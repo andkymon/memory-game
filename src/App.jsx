@@ -80,6 +80,7 @@ function App() {
           <div className="loader"></div>
         )}
       </main>
+      <footer>Background by <a href="https://www.freepik.com/free-vector/cute-playful-footprint-pattern-background-fauna-fun_45018544.htm#fromView=keyword&page=1&position=23&uuid=c61da0dc-33af-46e8-9256-e76b8e274894&query=Cat+Paw+Print">starline</a> on Freepik</footer>
     </>
   );
 }

@@ -14,11 +14,12 @@ https://www.joshwcomeau.com/css/custom-css-reset/
 }
 
 body {
+    background-color:palevioletred;
+    background-image: url('../bg.png');
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     justify-content: center;
     align-items: start;
-    
 }
 
 img,
@@ -68,11 +69,11 @@ button {
 
 button:hover {
     cursor: pointer;
-    filter: brightness(110%);
+    filter: brightness(120%);
 }
 
 button:focus {
-    filter: brightness(110%);
+    filter: brightness(120%);
 }
 
 button:active {
@@ -81,10 +82,15 @@ button:active {
 
 /* Header */
 header {
-    padding: 64px;
+    padding: 32px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    background-color: rgba(225, 0, 80);
+    margin: 32px auto;
+    border-radius: 16px;
+    box-shadow: 0px 4px 4px darkred;
+    width: fit-content;
 }
 
 h1 {
@@ -93,6 +99,7 @@ h1 {
 
 .instructions {
     text-align: center;
+    font-size: 1.25rem;
 }
 
 .score-wrapper {
@@ -103,7 +110,7 @@ h1 {
 
 @media (max-width: 425px) {
     header {
-        padding: 32px;
+        padding: 32px 16px;
     }
 
     h1 {
@@ -112,6 +119,20 @@ h1 {
 
     h2 {
         font-size: 1.25rem;
+    }
+
+    .instructions {
+        font-size: 1rem;
+    }    
+
+    .score-wrapper {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        margin: 32px;
     }
 }
 
@@ -129,10 +150,11 @@ main {
     align-items: center;
     gap: 8px;
 
-    background-color: gray;
+    background-color: darkorchid;
     padding: 8px;
     border-radius: 8px;
     margin: 16px;
+    box-shadow: 0px 4px 4px darkred;
 
     transition: 0.3s;
     cursor: pointer;
@@ -145,6 +167,7 @@ main {
 .card:hover,
 .card:focus-visible {
     transform: translateY(-10%);
+    box-shadow: 0px 16px 16px darkred;
 }
 
 .card:active {
@@ -155,13 +178,13 @@ main {
     height: 240px;
     width: 240px;
     background-color: gray;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .loader {
-    border: 12px solid #f3f3f3;
+    border: 12px solid lightpink;
     /* Light grey */
-    border-top: 12px solid gray;
+    border-top: 12px solid darkorchid;
     /* Blue */
     border-radius: 50%;
     width: 80px;
@@ -178,3 +201,25 @@ main {
         transform: rotate(360deg);
     }
 }
+
+@media (min-width: 1024px) {
+    main {
+        padding: 0px 64px;
+    }
+}
+
+/* Footer */
+footer {
+    margin-top: 32px;
+    font-size: 0.75rem;
+    color: white;
+    text-align: center;
+}
+
+footer a {
+    font-size: 0.75rem;
+    color: darkred;
+    text-decoration: underline;
+}
+
+
