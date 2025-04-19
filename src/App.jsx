@@ -63,7 +63,6 @@ function App() {
     e.currentTarget.blur(); // removing button focus on click
   };
 
-  //TODO: If cat array empty, display spinner
   return (
     <>
       <Header score={score} bestScore={bestScore} />
